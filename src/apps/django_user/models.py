@@ -8,7 +8,7 @@ from .managers import UserManager
 class User(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(
-        unique=True,
+        unique=True, null=True
     )
     role = models.CharField(max_length=15, choices=USER_ROLES)
     # for admin site
