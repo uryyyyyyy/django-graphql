@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==2.1.5"
+psycopg2-binary = "==2.7.7"
+mypy = "==0.670"
+django-model-utils = "==3.1.2"
+
+[scripts]
+lint = "flake8 ./src"
+isort = "isort -rc ./src"
+mypy = "mypy ./src"
+manage_py = "dotenv -f .env run python ./src/manage.py"
+
+[dev-packages]
+"flake8" = "*"
+isort = "*"
+python-dotenv = "*"
+"python-dotenv[cli]" = "*"
+
+[requires]
+python_version = "3.7"

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  db:
+    # Cloud SQL currently supports: PostgreSQL 9.6
+    image: postgres:9.6
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
