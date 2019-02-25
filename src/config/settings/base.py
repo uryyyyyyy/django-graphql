@@ -1,13 +1,15 @@
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from typing import List
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -20,8 +22,7 @@ DJANGO_APPS = [
     # 'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-THIRD_PARTY_APPS = [
-]
+THIRD_PARTY_APPS: List[str] = []
 LOCAL_APPS = [
     "apps.django_user",
 ]
