@@ -22,7 +22,9 @@ DJANGO_APPS = [
     # 'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-THIRD_PARTY_APPS: List[str] = []
+THIRD_PARTY_APPS = [
+    'graphene_django',
+]
 LOCAL_APPS = [
     "apps.django_user",
 ]
@@ -110,3 +112,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = "django_user.User"
+
+# graphene
+
+GRAPHENE = {
+    "SCHEMA": "config.schema.schema",
+}
