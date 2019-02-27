@@ -3,7 +3,7 @@ import json
 from django.http import HttpResponse, HttpRequest
 from django.views import View
 
-from apps.django_user.models import User
+from apps.for_django.models import User
 
 
 class LoginView(View):
