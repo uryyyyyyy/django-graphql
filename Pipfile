@@ -19,12 +19,15 @@ lint = "flake8 ./src"
 isort = "isort -rc ./src"
 mypy = "mypy ./src"
 manage_py = "dotenv -f .env run python ./src/manage.py"
+pytest = "pytest ./src"
 
 [dev-packages]
 "flake8" = "*"
 isort = "*"
-python-dotenv = "*"
 "python-dotenv[cli]" = "*"
+pytest-dotenv = "*"
+pytest = "*"
+v = {editable = true,version = "*"}
 
 [requires]
 python_version = "3.7"
