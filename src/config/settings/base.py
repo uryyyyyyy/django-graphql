@@ -38,7 +38,7 @@ MIDDLEWARE = [
     # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     "corsheaders.middleware.CorsMiddleware",
-    "utils.jwt_auth.JWTAuthenticationMiddleware",
+    "utils.jwt_middleware.JWTAuthenticationMiddleware",
 ]
 
 ROOT_URLCONF = 'config.urls'

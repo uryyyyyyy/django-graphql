@@ -4,9 +4,8 @@ import graphene
 from graphql import ResolveInfo, GraphQLError
 
 from apps.for_django.models import User as DBUser
-from utils import jwt_auth
+from utils import jwt
 from utils.oauth import facebook
-from utils.oauth.facebook import oauth
 
 
 class Token(graphene.Mutation):
@@ -22,7 +21,7 @@ class Token(graphene.Mutation):
         user: DBUser = DBUser.objects.get(email=email)
         if not user.check_password(password):
             raise GraphQLError('LOGIN_FAILED')
-        encoded = jwt_auth.encode(user.id)
+        encoded = jwt.encode(user.id)
         return Token(user_id=user.id, token=encoded)
 
 
@@ -52,7 +51,7 @@ class SocialAuthCallbackPayload(graphene.Mutation):
                 token = tokens['access_token']
                 user_detail = facebook.get_user_detail(token)
                 print(user_detail)
-                encoded = jwt_auth.encode(1)
+                encoded = jwt.encode(1)
                 return SocialAuthCallbackPayload(
                     token=encoded,
                     refreshToken='refreshToken',
