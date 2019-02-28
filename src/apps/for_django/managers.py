@@ -8,6 +8,7 @@ class UserManager(BaseUserManager):
 
     def create_superuser(self, email, password, **kwargs):
         """
+        for createsuperuser command.
         https://docs.djangoproject.com/ja/2.1/ref/contrib/auth/#django.contrib.auth.models.UserManager.create_superuser
         """
         print('create_superuser')

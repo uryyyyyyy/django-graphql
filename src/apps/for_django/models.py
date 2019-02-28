@@ -10,10 +10,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         unique=True, null=True
     )
+    name = models.CharField(max_length=500)
     role = models.CharField(max_length=15, choices=USER_ROLES)
-    # for admin site
-    is_staff = models.BooleanField()
-
-    objects = UserManager()
-
     USERNAME_FIELD = "email"
+
+    # for admin setting
+    is_staff = models.BooleanField()
+    REQUIRED_FIELDS = ["name"]
+    objects = UserManager()

@@ -9,6 +9,9 @@ psycopg2-binary = "==2.7.7"
 mypy = "==0.670"
 django-model-utils = "==3.1.2"
 graphene-django = "==2.2.0"
+pyjwt = "==1.7.1"
+cryptography = "==2.5"
+django-cors-headers = "==2.4.0"
 
 [scripts]
 lint = "flake8 ./src"
